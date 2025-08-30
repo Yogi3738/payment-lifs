@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Lifs Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    header img.logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 15px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.8);
+    }
+    header h1 {
+      font-size: 34px;
+      margin: 10px 0;
+      text-shadow: 
+        0 0 5px #0ff,
+        0 0 15px #0ff,
+        0 0 30px #0ff,
+        0 0 60px #0ff;
+      animation: neonFlicker 1.5s infinite alternate;
+    }
+    @keyframes neonFlicker {
+      from {
+        opacity: 1;
+        text-shadow:
+          0 0 5px #0ff,
+          0 0 15px #0ff,
+          0 0 30px #0ff,
+          0 0 60px #0ff;
+      }
+      to {
+        opacity: 0.85;
+        text-shadow:
+          0 0 2px #0ff,
+          0 0 8px #0ff,
+          0 0 20px #0ff;
+      }
+    }
+    .sound-btn {
+      margin-top: 15px;
+      background: #ff4757;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      font-size: 15px;
+      transition: transform 0.2s, background 0.3s;
+      box-shadow: 0 0 12px rgba(255,71,87,0.8);
+    }
+    .sound-btn:hover {
+      background: #c82333;
+      transform: scale(1.05);
+    }
+    .container {
+      max-width: 440px;
+      margin: 25px auto;
+      background: rgba(0,0,0,0.55);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.2);
+    }
+    h2 {
+      margin-top: 0;
+      color: #ffd700;
+      text-shadow: 0 0 8px rgba(255,215,0,0.8);
+    }
+    .method {
+      margin: 20px 0;
+    }
+    .method h3 {
+      margin-bottom: 8px;
+      color: #00e6e6;
+      text-shadow: 0 0 6px rgba(0,230,230,0.8);
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      box-shadow: 0 0 12px rgba(0,123,255,0.7);
+    }
+    button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+    .qris-img {
+      width: 210px;
+      margin: 10px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #28a745;
+      padding: 9px 15px;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+      box-shadow: 0 0 12px rgba(40,167,69,0.7);
+    }
+    .download-btn:hover {
+      background: #1e7e34;
+      transform: scale(1.05);
+    }
+    .customer-service {
+      margin: 25px auto;
+      padding: 18px;
+      max-width: 440px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .customer-service h3 {
+      margin-top: 0;
+      color: #ffd700;
+      text-shadow: 0 0 6px rgba(255,215,0,0.7);
+    }
+    .telegram {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: #0088cc;
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      box-shadow: 0 0 15px rgba(0,136,204,0.9);
+      transition: transform 0.2s, background 0.3s;
+    }
+    .telegram:hover {
+      background: #0077b5;
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://files.catbox.moe/82tkhw.jpg" alt="Store Logo" class="logo">
+    <h1>Lifs Store</h1>
+    <button class="sound-btn" onclick="playSound()">▶ Play Sound</button>
+  </header>  
+
+  <div class="container">
+    <h2>Metode Pembayaran</h2>
+    <div class="method">
+      <h3>GoPay</h3>
+      <p id="gopay-number">087841193965</p>
+      <button onclick="copyText('gopay-number')">Salin Nomor</button>
+    </div>
+
+    <div class="method">
+      <h3>DANA</h3>
+      <p id="dana-number">087841193965</p>
+      <button onclick="copyText('dana-number')">Salin Nomor</button>
+    </div>
+
+    <div class="method">
+      <h3>QRIS</h3>
+      <img src="https://files.catbox.moe/4j3i7s.jpeg" alt="QRIS Code" class="qris-img">
+      <br>
+      <a href="https://files.catbox.moe/4j3i7s.jpeg" download="QRIS-NamaStore.png" class="download-btn">Download QRIS</a>
+    </div>
+  </div>  
+
+  <div class="customer-service">
+    <h3>Customer Service</h3>
+    <p>Butuh bantuan? Hubungi kami via Telegram:</p>
+    <a href="https://t.me/liffstmvn" target="_blank" class="telegram">💬 Chat via Telegram</a>
+  </div>
+
+  <audio id="sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+  <script>
+    function copyText(elementId) {
+      var text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor berhasil disalin: " + text);
+      });
+    }
+
+    function playSound() {
+      var audio = document.getElementById("sound");
+      audio.play();
+    }
+  </script>
+</body>
+</html>
